@@ -1,0 +1,98 @@
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 70%;
+	margin: auto;
+	border: 1px solid black;
+}
+
+/*====================================
+Header
+====================================*/
+
+
+header div {
+	display: inline-block;
+	text-align: center;
+	border: 2px solid black;
+	vertical-align: top;
+}
+
+.left {
+	padding: 0% 6%;
+	width: 28%;
+	height: 146px;
+}
+
+.left img {
+	width: 90%;
+	margin-top: 6%;
+}
+
+.right {
+	width: 71.9%;
+	margin-left: -0.5%;
+	height: 146px;
+}
+
+.right img {
+	margin-top: 2%;
+	position: relative;
+	left: -6%;
+	width: 216px;
+}
+
+.right span {
+	display: block;
+	font-size: 3.5em;
+	position: relative;
+	left: -3%;
+	top: -8%;
+}
+
+/*====================================
+Input Div
+====================================*/
+
+.input-div span {
+	display: block;
+	text-align: left;
+	padding-left: 8%;
+	margin-top: 5%;
+	font-size: 2.4em;
+}
+
+.input-div div {
+	padding: 1% 11%;
+	padding-bottom: 12%;
+	text-align: center;
+	border-bottom: 1px solid black;
+}
+
+input {
+	margin: 1.5% 2%;
+	padding: 1% 6%;
+	text-align: center;
+}
+
+/*input:focus {
+	display: block;
+	margin: auto;
+}*/
+
+/*====================================
+Output Div
+====================================*/
+
+.output-div {
+	padding: 5%;
+}
+
+p {
+	font-size: 1.7em;
+	text-align: justify;
+}
