@@ -21,18 +21,19 @@
 		<div class="input-div">
 			<span>Provide the following words:</span>
 			<div >
-				<label>Name of Main Character: <input type="text" placeholder="Pick a name" ng-model="name" ng-click="name=''" ng-init="name='Ser Waymar Royce'"></label>
-				<input type="text" placeholder="" ng-model="place" ng-click="place=''" ng-init="place='house'">
-				<input type="text" placeholder="" ng-model="inhabitants" ng-click="inhabitants=''" ng-init="inhabitants='heirs'">
-				<input type="text" placeholder="" ng-model="descriptor" ng-click="descriptor=''" ng-init="descriptor='handsome'">
-				<input type="text" placeholder="" ng-model="age" ng-click="age=''" ng-init="age='eighteen'">
-				<input type="text" placeholder="" ng-model="comparator" ng-click="comparator=''" ng-init="comparator='knife'">
-				<input type="text" placeholder="" ng-model="color" ng-click="color=''" ng-init="color='black'">
-				<input type="text" placeholder="" ng-model='mount' ng-click="mount=''" ng-init="mount='destrier'">
-				<input type="text" placeholder="" ng-model="priority" ng-click="priority=''" ng-init="priority='wardrobe'">
+				<label>Pick a Name: <input type="text" placeholder="Name" ng-model="name" ng-click="name=''" ng-init="name='Ser Waymar Royce'"></label>
+				<label>What kind of place is (s)he from?: <input type="text" placeholder="Dwelling" ng-model="place" ng-click="place=''" ng-init="place='house'"></label>
+				<label>What type of things lived there? <input type="text" placeholder="Inhabitants" ng-model="inhabitants" ng-click="inhabitants=''" ng-init="inhabitants='heirs'"></label>
+				<label>Describe him/her in 1 word: <input type="text" placeholder="Descriptor" ng-model="descriptor" ng-click="descriptor=''" ng-init="descriptor='handsome'"></label>
+				<label>Age: <input type="text" placeholder="Age" ng-model="age" ng-click="age=''" ng-init="age='eighteen'"></label>
+				<label>What object does he/she look like?: <input type="text" placeholder="Compare" ng-model="comparator" ng-click="comparator=''" ng-init="comparator='knife'"></label>
+				<label>Favorite Color: <input type="text" placeholder="Color" ng-model="color" ng-click="color=''" ng-init="color='black'"></label>
+				<label>How does (s)he get around?: <input type="text" placeholder="Vehicle" ng-model='mount' ng-click="mount=''" ng-init="mount='destrier'"></label>
+				<label>What is the character's favorite thing<br> in his/her life? (1 word): <input type="text" placeholder="Quality/Possession" ng-model="priority" ng-click="priority=''" ng-init="priority='wardrobe'"></label>
 			</div>
 		</div>
 		<div class="output-div">
+			<h1>Chapter 1: The {{descriptor}} {{ name }}!</h1>
 			<p>
 			<span class='placeholder' ng-if="name.length!='0'">{{name}}</span><span class="placeholder" ng-if="name.length=='0'">Ser Waymar Royce</span> was the youngest son of an ancient 
 			<span class="placeholder" ng-if="place.length!='0'">{{place}}</span><span class="placeholder" ng-if="place.length=='0'">house</span> with too many
@@ -43,7 +44,7 @@
 			<span class="placeholder" ng-if="comparator.length=='0'">knife</span>.  Mounted on his huge <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> <span class="placeholder" ng-if="mount.length!='0'">{{mount}}</span>
 			<span class="placeholder" ng-if="mount.length=='0'">destrier</span>, the knight towered above Will and Gared on their smaller <span class="placeholder" ng-if="mount.length!='0'">{{mount}}</span>
-			<span class="placeholder" ng-if="mount.length=='0'">garrons</span>.  He wore <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
+			<span class="placeholder" ng-if="mount.length=='0'">garron</span>s.  He wore <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> leather boots, <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> woolen pants, <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> moleskin gloves, and a fine supple coat of gleaming <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>

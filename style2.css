@@ -6,7 +6,7 @@
 
 .container {
 	width: 70%;
-	margin: 10% auto;
+	margin: auto;
 	border: 1px solid black;
 }
 
@@ -76,31 +76,21 @@ Input Div
 label {
 	display: block;
 	clear: both;
-	padding-top: 30px;
-	text-align: left;
 }
 
 input {
-	/* margin: 1.5% 2%; */
+	margin: 1.5% 2%;
 	padding: 1% 6%;
 	text-align: center;
 	width: 60%;
-	float: right;
-	margin-top: -10px;
-}
-
-label:last-child input {
-	margin-top: -18px;
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
 /*====================================
 Output Div
 ====================================*/
-
-h1 {
-	text-align: center;
-	margin: 0px;
-}
 
 .output-div {
 	padding: 5%;
