@@ -96,3 +96,7 @@ p {
 	font-size: 1.7em;
 	text-align: justify;
 }
+
+.placeholder {
+	text-decoration: underline;
+}
