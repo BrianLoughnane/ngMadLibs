@@ -93,6 +93,10 @@ label:last-child input {
 	margin-top: -18px;
 }
 
+select {
+	margin-left: 10%;
+}
+
 /*====================================
 Output Div
 ====================================*/

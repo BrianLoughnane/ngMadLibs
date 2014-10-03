@@ -21,9 +21,15 @@
 			</div>
 		</header>
 		<div class="input-div">
-			<span>Provide the following words:</span>
+			<span ng-click="genderApply()">Provide the following words:</span>
 			<div >
 				<label>Pick a Name: <input type="text" placeholder="Name" ng-model="name" ng-click="name=''"></label>
+				<label>Gender: <select ng-model="gender">
+									<option>Male</option>
+									<option>Female</option>
+								</select>
+								<button ng-click="genderApply(gender)">Apply</button>
+				</label>
 				<label>What kind of place is (s)he from?: <input type="text" placeholder="Dwelling" ng-model="place" ng-click="place=''"></label>
 				<label>What type of things lived there? <input type="text" placeholder="Inhabitants" ng-model="inhabitants" ng-click="inhabitants=''"></label>
 				<label>Describe him/her in 1 word: <input type="text" placeholder="Descriptor" ng-model="descriptor" ng-click="descriptor=''"></label>
@@ -31,27 +37,27 @@
 				<label>What object does he/she look like?: <input type="text" placeholder="Compare" ng-model="comparator" ng-click="comparator=''"></label>
 				<label>Favorite Color: <input type="text" placeholder="Color" ng-model="color" ng-click="color=''"></label>
 				<label>How does (s)he get around?: <input type="text" placeholder="Vehicle" ng-model='mount' ng-click="mount=''"></label>
-				<label>What is the character's favorite thing<br> in his/her life? (1 word): <input type="text" placeholder="Quality/Possession" ng-model="priority" ng-click="priority=''"></label>
+				<label>What is the character's favorite thing<br> in his/her life?: <input type="text" placeholder="Quality/Possession" ng-model="priority" ng-click="priority=''"></label>
 			</div>
 		</div>
 		<div class="output-div">
 			<h1>Chapter 1: The {{descriptor}} {{ name }}!</h1>
 			<p>
-			<span class='placeholder' ng-if="name.length!='0'">{{name}}</span><span class="placeholder" ng-if="name.length=='0'">Ser Waymar Royce</span> was the youngest son of an ancient 
+			<span class='placeholder' ng-if="name.length!='0'">{{name}}</span><span class="placeholder" ng-if="name.length=='0'">Ser Waymar Royce</span> was the youngest {{child}} of an ancient 
 			<span class="placeholder" ng-if="place.length!='0'">{{place}}</span><span class="placeholder" ng-if="place.length=='0'">house</span> with too many
-			<span class="placeholder" ng-if="inhabitants.length!='0'">{{inhabitants}}</span>
-			<span class="placeholder" ng-if="inhabitants.length=='0'">heirs</span>.  He was a <span class="placeholder" ng-if="descriptor.length!='0'">{{descriptor}}</span>
-			<span class="placeholder" ng-if="descriptor.length=='0'">handsome</span> youth of <span class="placeholder" ng-if="age.length!='0'">{{age}}</span>
-			<span class="placeholder" ng-if="age.length=='0'">eighteen</span>, grey-eyed and graceful an slender as a <span class="placeholder" ng-if="comparator.length!='0'">{{comparator}}</span>
-			<span class="placeholder" ng-if="comparator.length=='0'">knife</span>.  Mounted on his huge <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
-			<span class="placeholder" ng-if="color.length=='0'">black</span> <span class="placeholder" ng-if="mount.length!='0'">{{mount}}</span>
-			<span class="placeholder" ng-if="mount.length=='0'">destrier</span>, the knight towered above Will and Gared on their smaller <span class="placeholder" ng-if="mount.length!='0'">{{mount}}</span>
-			<span class="placeholder" ng-if="mount.length=='0'">garron</span>s.  He wore <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
+			<span class="placeholder" ng-if="inhabitants.length!='0'">{{inhabitants}}.</span>
+			<span class="placeholder" ng-if="inhabitants.length=='0'">heirs.</span>  {{pronounUpper}} was a <span class="placeholder" ng-if="descriptor.length!='0'">{{descriptor}}</span>
+			<span class="placeholder" ng-if="descriptor.length=='0'">handsome</span> youth of <span class="placeholder" ng-if="age.length!='0'">{{age}},</span>
+			<span class="placeholder" ng-if="age.length=='0'">eighteen,</span> grey-eyed and graceful an slender as a <span class="placeholder" ng-if="comparator.length!='0'">{{comparator}}.</span>
+			<span class="placeholder" ng-if="comparator.length=='0'">knife.</span>  Mounted on {{possessivePronoun}} huge <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
+			<span class="placeholder" ng-if="color.length=='0'">black</span> <span class="placeholder" ng-if="mount.length!='0'">{{mount}},</span>
+			<span class="placeholder" ng-if="mount.length=='0'">destrier,</span> the knight towered above Will and Gared on their smaller <span class="placeholder" ng-if="mount.length!='0'">{{mount}}s</span>
+			<span class="placeholder" ng-if="mount.length=='0'">garrons</span>.  {{pronounUpper}} wore <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> leather boots, <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> woolen pants, <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> moleskin gloves, and a fine supple coat of gleaming <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> ringmail over layers of <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
-			<span class="placeholder" ng-if="color.length=='0'">black</span> wool and boiled leather.  <span class='placeholder' ng-if="name.length!='0'">{{name}}</span><span class="placeholder" ng-if="name.length=='0'">Ser Waymar</span> had been a Sworn Brother of the Night's Watch for less than half a year, but no one could say he had not prepared for his vocation.  At least insofar as his <span class="placeholder" ng-if="priority.length!='0'">{{priority}}</span>
+			<span class="placeholder" ng-if="color.length=='0'">black</span> wool and boiled leather.  <span class='placeholder' ng-if="name.length!='0'">{{name}}</span><span class="placeholder" ng-if="name.length=='0'">Ser Waymar</span> had been a Sworn {{sibling}} of the Night's Watch for less than half a year, but no one could say {{pronounLower}} had not prepared for {{possessivePronoun}} vocation.  At least insofar as {{possessivePronoun}} <span class="placeholder" ng-if="priority.length!='0'">{{priority}}</span>
 			<span class="placeholder" ng-if="priority.length=='0'">wardrobe</span> was concerned.
 			</p>
 		</div>
