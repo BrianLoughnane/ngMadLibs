@@ -1,13 +1,15 @@
 <!doctype html>
-<html lang="en" ng-app="">
+<html lang="en" ng-app="myApp">
 <head>
 	
 	<meta charset="UTF-8">
 	<title>ngMadLibs</title>
 	<link rel="stylesheet" type="text/css" href="normalize.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="angular.min.js" type="text/javascript"></script>
+	<script src="app.js"></script>
 </head>
-<body>
+<body ng-controller="myController">
 	<div class="container" >
 		<header>
 			<div class="left">
@@ -21,15 +23,15 @@
 		<div class="input-div">
 			<span>Provide the following words:</span>
 			<div >
-				<label>Pick a Name: <input type="text" placeholder="Name" ng-model="name" ng-click="name=''" ng-init="name='Ser Waymar Royce'"></label>
-				<label>What kind of place is (s)he from?: <input type="text" placeholder="Dwelling" ng-model="place" ng-click="place=''" ng-init="place='house'"></label>
-				<label>What type of things lived there? <input type="text" placeholder="Inhabitants" ng-model="inhabitants" ng-click="inhabitants=''" ng-init="inhabitants='heirs'"></label>
-				<label>Describe him/her in 1 word: <input type="text" placeholder="Descriptor" ng-model="descriptor" ng-click="descriptor=''" ng-init="descriptor='handsome'"></label>
-				<label>Age: <input type="text" placeholder="Age" ng-model="age" ng-click="age=''" ng-init="age='eighteen'"></label>
-				<label>What object does he/she look like?: <input type="text" placeholder="Compare" ng-model="comparator" ng-click="comparator=''" ng-init="comparator='knife'"></label>
-				<label>Favorite Color: <input type="text" placeholder="Color" ng-model="color" ng-click="color=''" ng-init="color='black'"></label>
-				<label>How does (s)he get around?: <input type="text" placeholder="Vehicle" ng-model='mount' ng-click="mount=''" ng-init="mount='destrier'"></label>
-				<label>What is the character's favorite thing<br> in his/her life? (1 word): <input type="text" placeholder="Quality/Possession" ng-model="priority" ng-click="priority=''" ng-init="priority='wardrobe'"></label>
+				<label>Pick a Name: <input type="text" placeholder="Name" ng-model="name" ng-click="name=''"></label>
+				<label>What kind of place is (s)he from?: <input type="text" placeholder="Dwelling" ng-model="place" ng-click="place=''"></label>
+				<label>What type of things lived there? <input type="text" placeholder="Inhabitants" ng-model="inhabitants" ng-click="inhabitants=''"></label>
+				<label>Describe him/her in 1 word: <input type="text" placeholder="Descriptor" ng-model="descriptor" ng-click="descriptor=''"></label>
+				<label>Age: <input type="text" placeholder="Age" ng-model="age" ng-click="age=''"></label>
+				<label>What object does he/she look like?: <input type="text" placeholder="Compare" ng-model="comparator" ng-click="comparator=''"></label>
+				<label>Favorite Color: <input type="text" placeholder="Color" ng-model="color" ng-click="color=''"></label>
+				<label>How does (s)he get around?: <input type="text" placeholder="Vehicle" ng-model='mount' ng-click="mount=''"></label>
+				<label>What is the character's favorite thing<br> in his/her life? (1 word): <input type="text" placeholder="Quality/Possession" ng-model="priority" ng-click="priority=''"></label>
 			</div>
 		</div>
 		<div class="output-div">
@@ -54,7 +56,7 @@
 			</p>
 		</div>
 	</div>
-	<script src="angular.min.js" type="text/javascript"></script>
+
 	<!-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script> -->
 </body>
 </html>
