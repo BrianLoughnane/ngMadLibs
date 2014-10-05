@@ -58,7 +58,7 @@ header div {
 Input Div
 ====================================*/
 
-.input-div span {
+#input-div>span {
 	display: block;
 	text-align: left;
 	padding-left: 8%;
@@ -66,18 +66,11 @@ Input Div
 	font-size: 2.4em;
 }
 
-.input-div div {
+#input-div form {
 	padding: 1% 11%;
 	padding-bottom: 12%;
 	text-align: center;
 	border-bottom: 1px solid black;
-}
-
-label {
-	display: block;
-	clear: both;
-	padding-top: 30px;
-	text-align: left;
 }
 
 input {
@@ -89,12 +82,56 @@ input {
 	margin-top: -10px;
 }
 
+.genderApply {
+	margin-left: 30px;
+	border: 1px solid black;
+	border-radius: 15px;
+	padding: 6px 40px;
+	box-shadow: 1px 3px 3px;
+	position: relative;
+}
+
+.genderApply:hover {
+	cursor: pointer;
+}
+
+.genderApply:active {
+	box-shadow: 1px 2px 3px;
+	top: 1px;
+	left: 1px;
+}
+
+#input-div input[type='submit'] {
+	margin-top: 30px;
+}
+
+label {
+	display: block;
+	clear: both;
+	padding-top: 30px;
+	text-align: left;
+}
+
 label:last-child input {
 	margin-top: -18px;
 }
 
 select {
-	margin-left: 10%;
+	margin-left: 30px;
+	padding: 5px;
+	border-radius: 15px;
+	padding-left: 35px;
+}
+
+select:focus {
+	outline: none;
+}
+
+form div {
+	margin-top: 30px;
+	text-align: left;
+	color: red;
+	font-size: 1.2em;
 }
 
 /*====================================

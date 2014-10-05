@@ -17,30 +17,39 @@
 			</div>
 			<div class="right">
 				<img src="ng-mad-libs-logo.png" alt="Mad Libs Logo">
-				<span>Automate This!</span>	
+				<span>Game of Thrones</span>	
 			</div>
 		</header>
-		<div class="input-div">
-			<span ng-click="genderApply()">Provide the following words:</span>
-			<div >
-				<label>Pick a Name: <input type="text" placeholder="Name" ng-model="name" ng-click="name=''"></label>
-				<label>Gender: <select ng-model="gender">
-									<option>Male</option>
-									<option>Female</option>
-								</select>
-								<button ng-click="genderApply(gender)">Apply</button>
-				</label>
-				<label>What kind of place is (s)he from?: <input type="text" placeholder="Dwelling" ng-model="place" ng-click="place=''"></label>
-				<label>What type of things lived there? <input type="text" placeholder="Inhabitants" ng-model="inhabitants" ng-click="inhabitants=''"></label>
-				<label>Describe him/her in 1 word: <input type="text" placeholder="Descriptor" ng-model="descriptor" ng-click="descriptor=''"></label>
-				<label>Age: <input type="text" placeholder="Age" ng-model="age" ng-click="age=''"></label>
-				<label>What object does he/she look like?: <input type="text" placeholder="Compare" ng-model="comparator" ng-click="comparator=''"></label>
-				<label>Favorite Color: <input type="text" placeholder="Color" ng-model="color" ng-click="color=''"></label>
-				<label>How does (s)he get around?: <input type="text" placeholder="Vehicle" ng-model='mount' ng-click="mount=''"></label>
-				<label>What is the character's favorite thing<br> in his/her life?: <input type="text" placeholder="Quality/Possession" ng-model="priority" ng-click="priority=''"></label>
-			</div>
+		<!-- <div id="input-div" ng-if="!submitted"> -->
+		<!-- <div id="input-div"> -->
+		<div id="input-div" ng-hide="submitted && valid">
+			<span>Provide the following words:</span>
+			<form name="madLibsForm" ng-submit="submit()" novalidate>
+				<label>Pick a Name: <input required name="name" type="text" placeholder="Name" ng-model="name" ng-click="name=''"></label>
+				<div ng-if="submitted && madLibsForm.name.$invalid">Please pick a name</div>
+				<label>Gender: <select required name="gender" ng-model="gender"><option>Male</option><option>Female</option></select>
+				<span class="genderApply" ng-click="genderApply(gender)">Apply</span></label>
+				<label>What kind of place is (s)he from?: <input required name="place" type="text" placeholder="Dwelling" ng-model="place" ng-click="place=''"></label>
+				<div ng-if="submitted && madLibsForm.place.$invalid">Please select a dwelling</div>
+				<label>What type of things lived there? <input required type="text" name="inhabitants" placeholder="Inhabitants" ng-model="inhabitants" ng-click="inhabitants=''"></label>
+				<div ng-if="submitted && madLibsForm.inhabitants.$invalid">Please select the inhabitants of the dwelling</div>
+				<label>Describe him/her in 1 word: <input required name="descriptor" type="text" placeholder="Descriptor" ng-model="descriptor" ng-click="descriptor=''"></label>
+				<div ng-if="submitted && madLibsForm.descriptor.$invalid">Please give a descriptor</div>
+				<label>Age: <input required name="age" type="number" placeholder="Age" ng-model="age" ng-click="age=''"></label>
+				<div ng-if="submitted && madLibsForm.age.$invalid">Please give the character an age</div>
+				<label>What object does he/she look like?: <input required name="comparator" type="text" placeholder="Compare" ng-model="comparator" ng-click="comparator=''"></label>
+				<div ng-if="submitted && madLibsForm.comparator.$invalid">Please name something that the character looks like</div>
+				<label>Favorite Color: <input required name="color" type="text" placeholder="Color" ng-model="color" ng-click="color=''"></label>
+				<div ng-if="submitted && madLibsForm.color.$invalid">Please name a color</div>
+				<label>How does (s)he get around?: <input required name="mount" type="text" placeholder="Vehicle" ng-model='mount' ng-click="mount=''"></label>
+				<div ng-if="submitted && madLibsForm.mount.$invalid">Please name a vehicle</div>
+				<label>What is the character's favorite thing<br> in his/her life?: <input required name="priority" type="text" placeholder="Quality/Possession" ng-model="priority" ng-click="priority=''"></label>
+				<div ng-if="submitted && madLibsForm.priority.$invalid">Please name the character's favorite thing</div>
+				<input type="submit" value="Generate my Madlib!">
+			</form>
 		</div>
-		<div class="output-div">
+<!-- 		<div class="output-div" ng-if="submitted"> -->
+		<div class="output-div" ng-show="submitted && valid">
 			<h1>Chapter 1: The {{descriptor}} {{ name }}!</h1>
 			<p>
 			<span class='placeholder' ng-if="name.length!='0'">{{name}}</span><span class="placeholder" ng-if="name.length=='0'">Ser Waymar Royce</span> was the youngest {{child}} of an ancient 
@@ -51,8 +60,8 @@
 			<span class="placeholder" ng-if="age.length=='0'">eighteen,</span> grey-eyed and graceful an slender as a <span class="placeholder" ng-if="comparator.length!='0'">{{comparator}}.</span>
 			<span class="placeholder" ng-if="comparator.length=='0'">knife.</span>  Mounted on {{possessivePronoun}} huge <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> <span class="placeholder" ng-if="mount.length!='0'">{{mount}},</span>
-			<span class="placeholder" ng-if="mount.length=='0'">destrier,</span> the knight towered above Will and Gared on their smaller <span class="placeholder" ng-if="mount.length!='0'">{{mount}}s</span>
-			<span class="placeholder" ng-if="mount.length=='0'">garrons</span>.  {{pronounUpper}} wore <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
+			<span class="placeholder" ng-if="mount.length=='0'">destrier,</span> the knight towered above Will and Gared on their smaller <span class="placeholder" ng-if="mount.length!='0' && madLibsForm.mount.$dirty">{{mount}}s</span>
+			<span class="placeholder" ng-if="mount.length=='0' || madLibsForm.mount.$pristine">garrons</span>.  {{pronounUpper}} wore <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> leather boots, <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> woolen pants, <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> moleskin gloves, and a fine supple coat of gleaming <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
@@ -60,6 +69,7 @@
 			<span class="placeholder" ng-if="color.length=='0'">black</span> wool and boiled leather.  <span class='placeholder' ng-if="name.length!='0'">{{name}}</span><span class="placeholder" ng-if="name.length=='0'">Ser Waymar</span> had been a Sworn {{sibling}} of the Night's Watch for less than half a year, but no one could say {{pronounLower}} had not prepared for {{possessivePronoun}} vocation.  At least insofar as {{possessivePronoun}} <span class="placeholder" ng-if="priority.length!='0'">{{priority}}</span>
 			<span class="placeholder" ng-if="priority.length=='0'">wardrobe</span> was concerned.
 			</p>
+			<form ng-submit="reset()"><input type="submit" value="Reset This Madlib!"></form>
 		</div>
 	</div>
 
