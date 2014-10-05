@@ -36,24 +36,22 @@ angular.module("myApp", []).controller("myController", ["$scope",
 				console.log('function method a fired');
 			};
 
-			$scope.view = 'input';
-
 			$scope.submitted = false;
+			$scope.valid = undefined;
 
 			$scope.submit = function() {
 				$scope.submitted = true;
+				
 
 				if($scope.madLibsForm.$valid) {
-					$scope.view = 'output';
-					document.getElementById('input-div').style.display = "none";
+					$scope.valid = true;
 				}
 				
 			};
 			
 			$scope.reset = function() {
-				$scope.view = 'input';
 				$scope.submitted = false;
-				document.getElementById('input-div').style.display = "block";
+				$scope.valid = undefined;
 				$scope.name = "Ser Waymar Royce";
 				$scope.place = "house";
 				$scope.inhabitants = "heirs";

@@ -20,8 +20,9 @@
 				<span>Game of Thrones</span>	
 			</div>
 		</header>
-		<!-- <div class="input-div" ng-if="view === 'input'"> -->
-		<div id="input-div">
+		<!-- <div id="input-div" ng-if="!submitted"> -->
+		<!-- <div id="input-div"> -->
+		<div id="input-div" ng-hide="submitted && valid">
 			<span>Provide the following words:</span>
 			<form name="madLibsForm" ng-submit="submit()" novalidate>
 				<label>Pick a Name: <input required name="name" type="text" placeholder="Name" ng-model="name" ng-click="name=''"></label>
@@ -47,8 +48,8 @@
 				<input type="submit" value="Generate my Madlib!">
 			</form>
 		</div>
-		<div class="output-div" ng-if="view === 'output'">
-		<!-- <div class="output-div"> -->
+<!-- 		<div class="output-div" ng-if="submitted"> -->
+		<div class="output-div" ng-show="submitted && valid">
 			<h1>Chapter 1: The {{descriptor}} {{ name }}!</h1>
 			<p>
 			<span class='placeholder' ng-if="name.length!='0'">{{name}}</span><span class="placeholder" ng-if="name.length=='0'">Ser Waymar Royce</span> was the youngest {{child}} of an ancient 
@@ -59,8 +60,8 @@
 			<span class="placeholder" ng-if="age.length=='0'">eighteen,</span> grey-eyed and graceful an slender as a <span class="placeholder" ng-if="comparator.length!='0'">{{comparator}}.</span>
 			<span class="placeholder" ng-if="comparator.length=='0'">knife.</span>  Mounted on {{possessivePronoun}} huge <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> <span class="placeholder" ng-if="mount.length!='0'">{{mount}},</span>
-			<span class="placeholder" ng-if="mount.length=='0'">destrier,</span> the knight towered above Will and Gared on their smaller <span class="placeholder" ng-if="mount.length!='0'">{{mount}}s</span>
-			<span class="placeholder" ng-if="mount.length=='0'">garrons</span>.  {{pronounUpper}} wore <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
+			<span class="placeholder" ng-if="mount.length=='0'">destrier,</span> the knight towered above Will and Gared on their smaller <span class="placeholder" ng-if="mount.length!='0' && madLibsForm.mount.$dirty">{{mount}}s</span>
+			<span class="placeholder" ng-if="mount.length=='0' || madLibsForm.mount.$pristine">garrons</span>.  {{pronounUpper}} wore <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> leather boots, <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> woolen pants, <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
 			<span class="placeholder" ng-if="color.length=='0'">black</span> moleskin gloves, and a fine supple coat of gleaming <span class="placeholder" ng-if="color.length!='0'">{{color}}</span>
