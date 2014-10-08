@@ -1,5 +1,6 @@
-angular.module("myApp", []).controller("myController", ["$scope", 
+angular.module("myApp", ['defaultFilters']).controller("myController", ["$scope", 
 		function($scope) {
+			// $scope.name = $scope.name || "Ser Waymar Royce";
 			$scope.name = "Ser Waymar Royce";
 			$scope.place = "house";
 			$scope.inhabitants = "heirs";
@@ -36,6 +37,8 @@ angular.module("myApp", []).controller("myController", ["$scope",
 				console.log('function method a fired');
 			};
 
+			$scope.$watch('gender', $scope.genderApply);
+
 			$scope.submitted = false;
 			$scope.valid = undefined;
 
@@ -69,6 +72,29 @@ angular.module("myApp", []).controller("myController", ["$scope",
 				$scope.possessivePronoun = 'his';
 				$scope.sibling = 'Brother';
 			};
+
+			$scope.userInput = document.getElementsByTagName('input').value;
+			
+			$scope.$watch('userInput', function() {
+				var inputs = {
+					'name' : "Ser Waymar Royce", 
+					'place' : "house",
+					'inhabitants' : "heirs",
+					'descriptor' : "handsome",
+					'age' : 18,
+					'comparator' : "knife",
+					'color' : "black",
+					'mount' : "destrier",
+					'priority' : "wardrobe",
+					'gender' : 'Male'
+				};
+
+				for(var i = 0; i < inputs.length; i++) {
+					if(!$scope[i]) {
+						$scope[i] = inputs[i];
+					}	
+				}
+			});
 		}
 	]);
 
