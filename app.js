@@ -1,5 +1,6 @@
-angular.module("myApp", ['defaultFilters']).controller("myController", ["$scope", 
-		function($scope) {
+var myModule = angular.module("myApp", []);
+
+myModule.controller("myController", function($scope) {
 			// $scope.name = $scope.name || "Ser Waymar Royce";
 			$scope.name = "Ser Waymar Royce";
 			$scope.place = "house";
@@ -72,29 +73,69 @@ angular.module("myApp", ['defaultFilters']).controller("myController", ["$scope"
 				$scope.possessivePronoun = 'his';
 				$scope.sibling = 'Brother';
 			};
+});
 
-			$scope.userInput = document.getElementsByTagName('input').value;
-			
-			$scope.$watch('userInput', function() {
-				var inputs = {
-					'name' : "Ser Waymar Royce", 
-					'place' : "house",
-					'inhabitants' : "heirs",
-					'descriptor' : "handsome",
-					'age' : 18,
-					'comparator' : "knife",
-					'color' : "black",
-					'mount' : "destrier",
-					'priority' : "wardrobe",
-					'gender' : 'Male'
-				};
+myModule.filter('default', function() {
+	return function (input, model) {
+		if (input) {
+			return input;
+		} else {
+			switch (model) {
+				case 'name':
+					return 'Ser Waymar Royce';
+					break;
+				case 'Ser Waymar':
+					return 'Ser Waymar';
+					break;
+				case 'place':
+					return 'house';
+					break;
+				case 'inhabitants':
+					return 'heirs';
+					break;
+				case 'descriptor':
+					return 'handsome';
+					break;
+				case 'age':
+					return 18;
+					break;
+				case 'comparator':
+					return 'knife';
+					break;
+				case 'color':
+					return 'black';
+					break;
+				case 'mount':
+					return 'destrier';
+					break;
+				case 'garrons':
+					return 'garrons';
+					break;
+				case 'priority':
+					return 'wardrobe';
+					break;
+				default:
+					return input;
+			}
+		}			
+		// } else if (a == 'a') {
+		// 	return 'apple';
+		// } else if (a == 'b') {
+		// 	return 'banana';
+		// } else {
+		// 	return 'horseshoe';
+		// }
 
-				for(var i = 0; i < inputs.length; i++) {
-					if(!$scope[i]) {
-						$scope[i] = inputs[i];
-					}	
-				}
-			});
-		}
-	]);
+	};
+
+
+		// switch (input) {
+		// 	case a:
+		// 		return 'yolo';
+		// 		// break;
+		// 	default: 
+		// 		return 'bark'; 
+		// }
+
+});
 
