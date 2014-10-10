@@ -76,66 +76,12 @@ myModule.controller("myController", function($scope) {
 });
 
 myModule.filter('default', function() {
-	return function (input, model) {
+	return function (input, def) {
 		if (input) {
 			return input;
 		} else {
-			switch (model) {
-				case 'name':
-					return 'Ser Waymar Royce';
-					break;
-				case 'Ser Waymar':
-					return 'Ser Waymar';
-					break;
-				case 'place':
-					return 'house';
-					break;
-				case 'inhabitants':
-					return 'heirs';
-					break;
-				case 'descriptor':
-					return 'handsome';
-					break;
-				case 'age':
-					return 18;
-					break;
-				case 'comparator':
-					return 'knife';
-					break;
-				case 'color':
-					return 'black';
-					break;
-				case 'mount':
-					return 'destrier';
-					break;
-				case 'garrons':
-					return 'garrons';
-					break;
-				case 'priority':
-					return 'wardrobe';
-					break;
-				default:
-					return input;
-			}
-		}			
-		// } else if (a == 'a') {
-		// 	return 'apple';
-		// } else if (a == 'b') {
-		// 	return 'banana';
-		// } else {
-		// 	return 'horseshoe';
-		// }
-
+			return def;
+		}
 	};
-
-
-		// switch (input) {
-		// 	case a:
-		// 		return 'yolo';
-		// 		// break;
-		// 	default: 
-		// 		return 'bark'; 
-		// }
-
 });
 
