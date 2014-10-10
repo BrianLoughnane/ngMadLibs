@@ -57,8 +57,35 @@ header div {
 /*====================================
 Input Div
 ====================================*/
+.input-div, .output-div {
+	-webkit-transition: 1s linear all;
+	-o-transition: 1s linear all;
+	transition: 1s linear all;
 
-#input-div>span {
+}
+
+.ng-hide-add, .ng-hide-remove {
+	display: block !important;
+	/*opacity: 1;*/
+}
+
+.ng-hide {
+	opacity: 0;
+}
+
+.ng-hide-remove {
+	-webkit-transition-delay: 1.5s;
+	-o-transition-delay: 1.5s;
+	transition-delay: 1.5s;
+}
+
+/*hideEvent ng-hide-add ng-hide-add-active ng-hide
+!showEvent
+
+!hideEvent ng-hide-remove ng-hide-remove-active !ng-hide
+showEvent*/
+
+.input-div>span {
 	display: block;
 	text-align: left;
 	padding-left: 8%;
@@ -66,7 +93,7 @@ Input Div
 	font-size: 2.4em;
 }
 
-#input-div form {
+.input-div form {
 	padding: 1% 11%;
 	padding-bottom: 12%;
 	text-align: center;
@@ -74,7 +101,6 @@ Input Div
 }
 
 input {
-	/* margin: 1.5% 2%; */
 	padding: 1% 6%;
 	text-align: center;
 	width: 60%;
@@ -101,7 +127,7 @@ input {
 	left: 1px;
 }
 
-#input-div input[type='submit'] {
+.input-div input[type='submit'] {
 	margin-top: 30px;
 }
 

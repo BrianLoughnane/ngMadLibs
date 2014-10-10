@@ -1,4 +1,4 @@
-var myModule = angular.module("myApp", []);
+var myModule = angular.module("myApp", ['ngAnimate']);
 
 myModule.controller("myController", function($scope) {
 			// $scope.name = $scope.name || "Ser Waymar Royce";
