@@ -160,6 +160,31 @@ form div {
 	font-size: 1.2em;
 }
 
+.errorMessage.ng-enter {
+	-webkit-animation: 2s showError;
+	animation: 2s showError;
+}
+
+@keyframes showError {
+	from {
+		color: red;
+	}
+
+	to {
+		color: green;
+	}
+}
+
+@-webkit-keyframes showError {
+	from {
+		color: red;
+	}
+
+	to {
+		color: green;
+	}
+}
+
 /*====================================
 Output Div
 ====================================*/
