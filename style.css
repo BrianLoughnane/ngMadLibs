@@ -57,7 +57,7 @@ header div {
 /*====================================
 Input Div
 ====================================*/
-.input-div, .output-div {
+/*.input-div, .output-div {
 	-webkit-transition: 1s linear all;
 	-o-transition: 1s linear all;
 	transition: 1s linear all;
@@ -66,7 +66,7 @@ Input Div
 
 .ng-hide-add, .ng-hide-remove {
 	display: block !important;
-	/*opacity: 1;*/
+	opacity: 1;
 }
 
 .ng-hide {
@@ -77,8 +77,38 @@ Input Div
 	-webkit-transition-delay: 1.5s;
 	-o-transition-delay: 1.5s;
 	transition-delay: 1.5s;
+}*/
+
+.anim {
+	-webkit-transition: 2s linear all;
+	-o-transition: 2s linear all;
+	transition: 2s linear all;
 }
 
+.anim.ng-hide-add {
+	transform: translateX(0px);
+}
+
+.anim.ng-hide-add-active {
+	transform: translateX(3000px);
+}
+
+.anim.ng-hide-remove {
+	/*transition-delay: 3s;*/
+	transform: translateX(-3000px);
+	/*opacity: 1;*/
+	/*display: none !important;*/
+}
+
+.anim.ng-hide-remove-active {
+	transform: translateX(0px);
+	/*opacity: 0;*/
+	/*display: block !important;*/
+}
+
+/*.anim.ng-hide {
+	display: block !important;
+}*/
 /*hideEvent ng-hide-add ng-hide-add-active ng-hide
 !showEvent
 
@@ -97,7 +127,7 @@ showEvent*/
 	padding: 1% 11%;
 	padding-bottom: 12%;
 	text-align: center;
-	border-bottom: 1px solid black;
+	/*border-bottom: 1px solid black;*/
 }
 
 input {
@@ -160,16 +190,18 @@ form div {
 	font-size: 1.2em;
 }
 
-.errorMessage.ng-enter {
-	-webkit-animation: 2s showError;
-	animation: 2s showError;
+/*.errorMessage.ng-enter {
+	-webkit-animation:  showError 5s infinite linear alternate;
+	animation: showError 5s linear 0s reverse;
 }
 
 @keyframes showError {
 	from {
 		color: red;
 	}
-
+	50% {
+		color: pink;
+	}
 	to {
 		color: green;
 	}
@@ -179,12 +211,14 @@ form div {
 	from {
 		color: red;
 	}
-
+	50% {
+		color: pink;
+	}
 	to {
 		color: green;
 	}
 }
-
+*/
 /*====================================
 Output Div
 ====================================*/
