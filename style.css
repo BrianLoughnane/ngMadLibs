@@ -4,10 +4,19 @@
 	box-sizing: border-box;
 }
 
+html {
+	height: 100%;
+}
+
+body {
+	height: 140%;
+}
+
 .container {
 	width: 70%;
 	margin: 10% auto;
 	border: 1px solid black;
+	position: relative;
 }
 
 /*====================================
@@ -15,14 +24,19 @@ Header
 ====================================*/
 
 
+header {
+	border: 2px solid black;
+}
+
 header div {
 	display: inline-block;
 	text-align: center;
-	border: 2px solid black;
 	vertical-align: top;
 }
 
 .left {
+	border: 2px solid black;
+	border-width: 0px 3px 0px 0px;
 	padding: 0% 6%;
 	width: 28%;
 	height: 146px;
@@ -30,7 +44,6 @@ header div {
 
 .left img {
 	width: 90%;
-	margin-top: 6%;
 }
 
 .right {
@@ -55,65 +68,67 @@ header div {
 }
 
 /*====================================
-Input Div
+Animation
 ====================================*/
-/*.input-div, .output-div {
-	-webkit-transition: 1s linear all;
-	-o-transition: 1s linear all;
-	transition: 1s linear all;
-
-}
-
-.ng-hide-add, .ng-hide-remove {
-	display: block !important;
-	opacity: 1;
-}
-
-.ng-hide {
-	opacity: 0;
-}
-
-.ng-hide-remove {
-	-webkit-transition-delay: 1.5s;
-	-o-transition-delay: 1.5s;
-	transition-delay: 1.5s;
-}*/
 
 .anim {
 	-webkit-transition: 2s linear all;
 	-o-transition: 2s linear all;
 	transition: 2s linear all;
+	position: absolute;
+	width: 100%;
 }
 
 .anim.ng-hide-add {
-	transform: translateX(0px);
+	transform: scaleY(1) scaleX(1);
 }
 
 .anim.ng-hide-add-active {
-	transform: translateX(3000px);
+	transform: scaleY(0) scaleX(0);
 }
 
 .anim.ng-hide-remove {
-	/*transition-delay: 3s;*/
-	transform: translateX(-3000px);
-	/*opacity: 1;*/
-	/*display: none !important;*/
+	transition-delay: 2s;
+	transform: scaleY(0) scaleX(0);
 }
 
 .anim.ng-hide-remove-active {
-	transform: translateX(0px);
-	/*opacity: 0;*/
-	/*display: block !important;*/
+	transform: scaleY(1) scaleX(1);
 }
 
-/*.anim.ng-hide {
-	display: block !important;
-}*/
-/*hideEvent ng-hide-add ng-hide-add-active ng-hide
-!showEvent
+/*.errorMessage.ng-enter {
+	-webkit-animation:  showError 5s infinite linear alternate;
+	animation: showError 5s linear 0s reverse;
+}
 
-!hideEvent ng-hide-remove ng-hide-remove-active !ng-hide
-showEvent*/
+@keyframes showError {
+	from {
+		color: red;
+	}
+	50% {
+		color: pink;
+	}
+	to {
+		color: green;
+	}
+}
+
+@-webkit-keyframes showError {
+	from {
+		color: red;
+	}
+	50% {
+		color: pink;
+	}
+	to {
+		color: green;
+	}
+}*/
+
+/*====================================
+Input Div
+====================================*/
+
 
 .input-div>span {
 	display: block;
@@ -190,35 +205,7 @@ form div {
 	font-size: 1.2em;
 }
 
-/*.errorMessage.ng-enter {
-	-webkit-animation:  showError 5s infinite linear alternate;
-	animation: showError 5s linear 0s reverse;
-}
 
-@keyframes showError {
-	from {
-		color: red;
-	}
-	50% {
-		color: pink;
-	}
-	to {
-		color: green;
-	}
-}
-
-@-webkit-keyframes showError {
-	from {
-		color: red;
-	}
-	50% {
-		color: pink;
-	}
-	to {
-		color: green;
-	}
-}
-*/
 /*====================================
 Output Div
 ====================================*/
