@@ -96,34 +96,34 @@ Animation
 	transform: scaleY(1) scaleX(1);
 }
 
-/*.errorMessage.ng-enter {
+.errorMessage {
 	-webkit-animation:  showError 5s infinite linear alternate;
-	animation: showError 5s linear 0s reverse;
+	animation: showError 5s infinite linear alternate;
 }
 
 @keyframes showError {
 	from {
-		color: red;
+		opacity: 1;
 	}
 	50% {
-		color: pink;
+		opacity: 0.2;
 	}
 	to {
-		color: green;
+		opacity: 1;
 	}
 }
 
 @-webkit-keyframes showError {
 	from {
-		color: red;
+		opacity: 1;
 	}
 	50% {
-		color: pink;
+		opacity: 0.2;
 	}
 	to {
-		color: green;
+		opacity: 1;
 	}
-}*/
+}
 
 /*====================================
 Input Div
